@@ -28,6 +28,6 @@ class people::pamo::applications {
   ]
 
   ## Declare all Homebrew packages at once
-  package { $homebrew_packages: }
-  package { $cask_packages : provider => 'brewcask', install_options => '--appdir=/Applications' }
+  package { $homebrew_packages }
+  package { $cask_packages: provider => 'brewcask', install_options => '--appdir=/Applications' }
 }
