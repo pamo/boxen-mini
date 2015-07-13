@@ -32,4 +32,28 @@ class people::pamo::config (
           top_right => "Desktop",
           bottom_left => "Application Windows"
   }
+    boxen::osx_defaults { 'Show full date in menu bar':
+                          user   => $::boxen_user,
+                          key    => 'DateFormat',
+                          domain => 'com.apple.menuextra.clock.plist',
+                          value  => 'EEE MMM d  h:mm a',
+                          notify => Exec['killall SystemUIServer'];
+    }
+    exec { 'killall SystemUIServer':
+           command => "/usr/bin/killall SystemUIServer; /usr/bin/killall -u $my_username cfprefsd",
+           refreshonly => true
+    }
+
+    boxen::osx_defaults { 'Disable the "Are you sure you want to open this application?" dialog':
+                          key    => 'LSQuarantine',
+                          domain => 'com.apple.LaunchServices',
+                          value  => 'true',
+    }
+    boxen::osx_defaults { 'Finder Status Bar':
+    ensure	=> 	present,
+    domain	=>	'com.apple.finder',
+    key		=>	'ShowStatusBar',
+    value	=>	'YES',
+    }
+
 }
