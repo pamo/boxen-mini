@@ -23,10 +23,11 @@ class people::pamo::applications {
     'spotify',
     'skype',
     'the-unarchiver',
-    'transmission'
+    'transmission',
+    'vlc'
   ]
 
   ## Declare all Homebrew packages at once
   package { $homebrew_packages: }
-  package { $cask_packages : provider => 'brewcask' }
+  package { $cask_packages : provider => 'brewcask', install_options => '--appdir=/Applications' }
 }
