@@ -1,4 +1,4 @@
-class people::pamo::config (
+class people::pamo::dock (
   $my_homedir   = $people::pamo::params::my_homedir,
   $my_sourcedir = $people::pamo::params::my_sourcedir,
   $my_username  = $people::pamo::params::my_username
