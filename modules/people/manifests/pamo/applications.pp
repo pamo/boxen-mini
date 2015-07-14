@@ -1,6 +1,5 @@
 class people::pamo::applications {
   include brewcask
-  include popcorntime
 
   package { '1password': provider => 'brewcask', install_options => ['--appdir=/Applications'] }
   package { 'alfred': provider => 'brewcask', install_options =>  ['--appdir=/Applications'] }
