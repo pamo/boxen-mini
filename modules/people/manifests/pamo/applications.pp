@@ -5,7 +5,6 @@ class people::pamo::applications {
   package { 'alfred': provider => 'brewcask', install_options =>  ['--appdir=/Applications'] }
   package { 'dropbox': provider => 'brewcask', install_options => ['--appdir=/Applications'] }
   package { 'google-chrome': provider => 'brewcask', install_options => ['--appdir=/Applications'] }
-  package { 'google-hangouts': provider => 'brewcask', install_options => ['--appdir=/Applications'] }
   package { 'google-notifier': provider => 'brewcask', install_options => ['--appdir=/Applications'] }
   package { 'flux': provider => 'brewcask', install_options => ['--appdir=/Applications'] }
   package { 'flash-player': provider => 'brewcask', install_options => ['--appdir=/Applications'] }
